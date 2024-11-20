@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="index.js"></script>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  <h2 id="welcome-message"></h2>
+  <h3>Load previous responses <span><button onclick="loaddata()">LoadImages</button></span></h3>
+  <h3>Enter the Prompt<span> : <input id="prompt" type="text" width="100%" required></span></h3>
+    <label for="model">Select Model:</label>
+    
+    <select id="model">
+        <option value="3Guofeng3_v34.safetensors [50f420de]">3Guofeng3_v34</option>
+        <option value="absolutereality_V16.safetensors [37db0fc3]">AbsoluteReality_V16</option>
+        <option value="absolutereality_v181.safetensors [3d9d4d2b]">AbsoluteReality_v181</option>
+        <option value="amIReal_V41.safetensors [0a8a2e61]">AmIReal_V41</option>
+        <option value="analog-diffusion-1.0.ckpt [9ca13f02]">Analog-Diffusion_1.0</option>
+        <option value="aniverse_v30.safetensors [579e6f85]">Aniverse_v30</option>
+        <option value="anythingv3_0-pruned.ckpt [2700c435]">AnythingV3_0-Pruned</option>
+        <option value="anything-v4.5-pruned.ckpt [65745d25]">AnythingV4.5-Pruned</option>
+        <option value="anythingV5_PrtRE.safetensors [893e49b9]">AnythingV5_PrtRE</option>
+        <option value="AOM3A3_orangemixs.safetensors [9600da17]">AOM3A3_OrangeMixs</option>
+        <option value="blazing_drive_v10g.safetensors [ca1c1eab]">Blazing_Drive_v10g</option>
+        <option value="breakdomain_I2428.safetensors [43cc7d2f]">BreakDomain_I2428</option>
+        <option value="breakdomain_M2150.safetensors [15f7afca]">BreakDomain_M2150</option>
+        <option value="cetusMix_Version35.safetensors [de2f2560]">CetusMix_Version35</option>
+        <option value="childrensStories_v13D.safetensors [9dfaabcb]">ChildrensStories_v13D</option>
+        <option value="childrensStories_v1SemiReal.safetensors [a1c56dbb]">ChildrensStories_v1SemiReal</option>
+        <option value="childrensStories_v1ToonAnime.safetensors [2ec7b88b]">ChildrensStories_v1ToonAnime</option>
+        <option value="Counterfeit_v30.safetensors [9e2a8f19]">Counterfeit_v30</option>
+        <option value="cuteyukimixAdorable_midchapter3.safetensors [04bdffe6]">CuteYukiMixAdorable_MidChapter3</option>
+        <option value="cyberrealistic_v33.safetensors [82b0d085]">CyberRealistic_v33</option>
+        <option value="dalcefo_v4.safetensors [425952fe]">Dalcefo_v4</option>
+        <option value="deliberate_v2.safetensors [10ec4b29]">Deliberate_v2</option>
+        <option value="deliberate_v3.safetensors [afd9d2d4]">Deliberate_v3</option>
+        <option value="dreamlike-anime-1.0.safetensors [4520e090]">Dreamlike-Anime_1.0</option>
+        <option value="dreamlike-diffusion-1.0.safetensors [5c9fd6e0]">Dreamlike-Diffusion_1.0</option>
+        <option value="dreamlike-photoreal-2.0.safetensors [fdcf65e7]">Dreamlike-Photoreal_2.0</option>
+        <option value="dreamshaper_6BakedVae.safetensors [114c8abb]">DreamShaper_6BakedVae</option>
+        <option value="dreamshaper_7.safetensors [5cf5ae06]">DreamShaper_7</option>
+        <option value="dreamshaper_8.safetensors [9d40847d]">DreamShaper_8</option>
+        <option value="edgeOfRealism_eorV20.safetensors [3ed5de15]">EdgeOfRealism_EoRV20</option>
+        <option value="EimisAnimeDiffusion_V1.ckpt [4f828a15]">EimisAnimeDiffusion_V1</option>
+        <option value="elldreths-vivid-mix.safetensors [342d9d26]">Elldreths-Vivid-Mix</option>
+        <option value="epicphotogasm_xPlusPlus.safetensors [1a8f6d35]">EpicPhotogasm_XPlusPlus</option>
+        <option value="epicrealism_naturalSinRC1VAE.safetensors [90a4c676]">EpicRealism_NaturalSinRC1VAE</option>
+        <option value="epicrealism_pureEvolutionV3.safetensors [42c8440c]">EpicRealism_PureEvolutionV3</option>
+        <option value="ICantBelieveItsNotPhotography_seco.safetensors [4e7a3dfd]">ICantBelieveItsNotPhotography_Seco</option>
+        <option value="indigoFurryMix_v75Hybrid.safetensors [91208cbb]">IndigoFurryMix_v75Hybrid</option>
+        <option value="juggernaut_aftermath.safetensors [5e20c455]">Juggernaut_Aftermath</option>
+        <option value="lofi_v4.safetensors [ccc204d6]">LoFi_v4</option>
+        <option value="lyriel_v16.safetensors [68fceea2]">Lyriel_v16</option>
+        <option value="majicmixRealistic_v4.safetensors [29d0de58]">MajicMixRealistic_v4</option>
+        <option value="mechamix_v10.safetensors [ee685731]">MechaMix_v10</option>
+        <option value="meinamix_meinaV9.safetensors [2ec66ab0]">MeinaMix_MeinaV9</option>
+        <option value="meinamix_meinaV11.safetensors [b56ce717]">MeinaMix_MeinaV11</option>
+        <option value="neverendingDream_v122.safetensors [f964ceeb]">NeverEndingDream_v122</option>
+        <option value="openjourney_V4.ckpt [ca2f377f]">OpenJourney_V4</option>
+        <option value="pastelMixStylizedAnime_pruned_fp16.safetensors [793a26e8]">PastelMixStylizedAnime_PruneFP16</option>
+        <option value="portraitplus_V1.0.safetensors [1400e684]">PortraitPlus_V1.0</option>
+        <option value="protogenx34.safetensors [5896f8d5]">ProtogenX34</option>
+        <option value="Realistic_Vision_V1.4-pruned-fp16.safetensors [8d21810b]">RealisticVision_V1.4-PrunedFP16</option>
+        <option value="Realistic_Vision_V2.0.safetensors [79587710]">RealisticVision_V2.0</option>
+        <option value="Realistic_Vision_V4.0.safetensors [29a7afaa]">RealisticVision_V4.0</option>
+        <option value="Realistic_Vision_V5.0.safetensors [614d1063]">RealisticVision_V5.0</option>
+        <option value="Realistic_Vision_V5.1.safetensors [a0f13c83]">RealisticVision_V5.1</option>
+        <option value="redshift_diffusion-V10.safetensors [1400e684]">Redshift_Diffusion-V10</option>
+        <option value="revAnimated_v122.safetensors [3f4fefd9]">RevAnimated_v122</option>
+        <option value="rundiffusionFX25D_v10.safetensors [cd12b0ee]">RunDiffusionFX25D_v10</option>
+        <option value="rundiffusionFX_v10.safetensors [cd4e694d]">RunDiffusionFX_v10</option>
+        <option value="sdv1_4.ckpt [7460a6fa]">SDV1_4</option>
+        <option value="v1-5-pruned-emaonly.safetensors [d7049739]">V1-5-Pruned-EmaOnly</option>
+        <option value="v1-5-inpainting.safetensors [21c7ab71]">V1-5-Inpainting</option>
+        <option value="shoninsBeautiful_v10.safetensors [25d8c546]">ShoninsBeautiful_v10</option>
+        <option value="theallys-mix-ii-churned.safetensors [5d9225a4]">TheAllys-Mix-II-Churned</option>
+        <option value="timeless-1.0.ckpt [7c4971d4]">Timeless-1.0</option>
+        <option value="toonyou_beta6.safetensors [980f6b15]">ToonYou_Beta6</option>
+    </select>   
+    <br>
+    <label for="Server">Select Model:</label>
+    <select id="server">
+        <option value="(Your API-Key)">Server 1</option>
+        <option value="(Your API-Key)">Server 2</option>
+        <option value="(Your API-Key)">Server 3</option>
+        <option value="(Your API-Key)">Server 4</option>
+
+    </select>
+    <br>
+    <div class="form-group">
+        <label for="widthSlider">Width:</label>
+        <input type="range" id="widthSlider" name="widthSlider" min="512" max="1024" value="768" class="form-control-range" oninput="widthOutput.value = this.value">
+        <output id="widthOutput">768</output>px
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label for="heightSlider">Height:</label>
+        <input type="range" id="heightSlider" name="heightSlider" min="512" max="1024" value="768" class="form-control-range" oninput="heightOutput.value = this.value">
+        <output id="heightOutput">768</output>px
+    </div> 
+    <br>
+    <div class="form-group">
+        <label for="steps">Steps Count: <span id="stepsValue">30</span></label>
+        <input type="range" id="steps" name="steps" min="1" max="30" value="30" class="form-control-range" oninput="document.getElementById('stepsValue').textContent = this.value">
+    </div>
+    <br>
+    <button onclick="generate()">Receive</button>
+    <div id="currentDate"></div>
+</body>
+</html>
